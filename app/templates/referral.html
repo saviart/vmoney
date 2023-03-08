@@ -1,0 +1,283 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vmoneys</title>
+    <link rel="shortcut icon" href={% static "/public/assets/img/favicon.png" %}/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href={% static "public/assets/css/style.css" %} />
+    <link rel="stylesheet" href={% static "public/assets/font/fontawesome-free-6.2.1-web/css/all.min.css" %} />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src={% static "public/assets/js/vendor/countup.js" %} ></script>
+</head>
+<body>
+    <div class="main">
+        <div class="modal_account" onclick="hideModalprofile()">
+            <div class="modal_account_main">
+                <a href="/profile">
+                    <div class="modal_account_item">
+                        <i class="fa-solid fa-id-card"></i>
+                        <span>Profile</span>
+                    </div>
+                </a>
+                <a href="/">
+                    <div class="modal_account_item">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span> Logout<span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="side_menu">
+            <div class="menu_logo">
+                <img src={% static "/public/assets/img/main_logo_vmoneys.png" alt="" %}/>
+            </div>
+            <div class="menu_list">
+                <a href="/">
+                    <div class="list_item active">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </div>
+                </a>
+                <a href="/earn">
+                    <div class="list_item">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        <span>Earn</span>
+                    </div>
+                </a>
+                <a href="/withdraw">
+                    <div class="list_item">
+                        <i class="fa-brands fa-cc-amazon-pay"></i>
+                        <span>Withdraw</span>
+                    </div>
+                </a>
+                <a href="/leaderboard">
+                    <div class="list_item">
+                        <i class="fa-solid fa-ranking-star"></i>
+                        <span>Leaderboard</span>
+                    </div>
+                </a>
+                <a href="/ref">
+                    <div class="list_item">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <span>Referrals</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="main_content">
+            <div class="content_header">
+                <div class="header_logo">
+                    <img src={% static "/public/assets/img/main_logo_vmoneys.png" alt="" %} >
+                </div>
+                 {% if user.is_authenticated %}
+                <div class="header_account">
+                    <div class="account_info">
+                        <div class="account_info_name"> <span>{{user.username}}</span></div>
+                        <div class="account_info_point">
+                            <i class="fa-solid fa-coins"></i>
+                            <span>{{ user.user_coins}}</span>
+
+                        </div>
+                    </div>
+                    <div class="account_avatar" onclick="showModalprofile()">
+                                             {%  if user.avatar == none %}
+                                  <img alt="avatar" src="https://eu.ui-avatars.com/api/?background=random&amp;color=fff&amp;name={{user.username}}"/>
+                                {%  else %}
+                            <img alt="avatar" src="{{ user.avatar}}" />
+                                {%  endif %}
+                    </div>
+                </div>
+                {% else %}
+                <div class="header_btn">
+                    <a href="/signin">
+                        <div class="btn_signin">
+                            <div class="signin_icon">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                            </div>
+                            <div class="signin_text">
+                                SIGN IN
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/signup">
+                        <div class="btn_signup">
+                            <div class="signup_icon">
+                                <i class="fa-solid fa-user-pen"></i>
+                            </div>
+                            <div class="signup_text">
+                                SIGN UP
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {%  endif %}
+            </div>
+            <div class="content_page">
+                <div class="page_timeline">
+                    <div class="timeline_online">
+                        <div class="online_icon">
+                            <i class="fa-solid fa-house-signal"></i>
+                        </div>
+                        <div class="online_number">
+                            Online <span>1,357</span>
+                        </div>
+                    </div>
+                    <div class="timeline_row" id="timeline">
+
+
+                    </div>
+                </div>
+                <div class="page_referrals">
+                    <div class="referrals_main">
+                        <div class="referrals_main_header">
+                            <div class="referrals_header_title">Invite To Earn</div>
+                            <div class="referrals_header_description">Invite your friends to Vmoneys and get share of their earnings! Every offer they complete will give you a 10% commission.</div>
+                        </div>
+                        <div class="referrals_main_content">
+                            <div class="referrals_main_content_step">
+                                <div class="step_number">
+                                    <div class="step_number_icon">
+                                        <i class="fa-solid fa-square-share-nodes"></i>
+                                    </div>
+                                </div>
+                                <div class="step_text">
+                                    <div class="step_text_title">1, Share your referral link</div>
+                                    <div class="step_text_description">Share your invitation link to invite friends to Lootcash.net</div>
+                                    <div class="step_text_description">Whenever your friend sign up to the coin loot following your link they get 50 coins!</div>
+                                    <div class="step_text_link">
+                                        <span>https://vmoneys.net/{{ user.ref_code }}</span>
+                                    </div>
+                                    <div class="btn_copy">
+                                        <button><i class="fa-solid fa-copy"></i> Copy Link</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="referrals_main_content_step">
+                                <div class="step_number">
+                                    <div class="step_number_icon">
+                                        <i class="fa-solid fa-gift"></i>
+                                    </div>
+                                </div>
+                                <div class="step_text">
+                                    <div class="step_text_title">2, Collect Your Share</div>
+                                    <div class="step_text_description">Every offer completed by referred user will give you a 10% commission.</div>
+                                </div>
+                            </div>
+                            <div class="referrals_main_content_step">
+                                <div class="step_number">
+                                    <div class="step_number_icon">
+                                        <i class="fa-solid fa-repeat"></i>
+                                    </div>
+                                </div>
+                                <div class="step_text">
+                                    <div class="step_text_title">3, Repeat Share</div>
+                                    <div class="step_text_description">Keep inviting as many friends as you can to effortlessly earn a passive income that you can redeem for your preferred rewards!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content_footer">
+                    <div class="footer_content">
+                        <div class="footer_left">
+                            <div class="left_logo">
+                                <img src={% static "/public/assets/img/footer_logo_vmoneys.png" alt="" %}>
+                            </div>
+                            <div class="footer_left_text">
+                                <div class="left_title">Vmoneys.net | All Rights Reserved</div>
+                                <div class="left_description">© Copyright 2020 - 2023</div>
+                            </div>
+
+                        </div>
+                        <div class="footer_main">
+                            <div class="footer_main_column">
+                                <div class="main_column_title">About</div>
+                                <div class="main_column_description">
+                                    <a href="/terms">Terms of Service</a>
+                                </div>
+                                <div class="main_column_description">
+                                    <a href="/privacy">Privacy Policy</a>
+                                </div>
+                            </div>
+                            <div class="footer_main_column">
+                                <div class="main_column_title">Support</div>
+                                <div class="main_column_description">
+                                    <a href="mailto:contact@vmoneys.net">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_menubottom">
+                <a href="/">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Home</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/earn">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Earn</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/withdraw">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-brands fa-cc-amazon-pay"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Withdraw</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/leaderboard">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-solid fa-ranking-star"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Leaderboard</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/ref">
+                    <div class="menubottom_item activebtn">
+                        <div class="menubottom_item_icon">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Referrals</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src={% static "/public/assets/js/app.js" %}></script>
+<script>
+            setTimeout(() => {
+                gettimeline();
+            }, 50);
+
+        </script>
+</body>
+</html>

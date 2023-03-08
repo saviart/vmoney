@@ -1,0 +1,453 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vmoneys</title>
+    <link rel="shortcut icon" href={% static "/public/assets/img/favicon.png" %}/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href={% static "public/assets/css/style.css" %} />
+    <link rel="stylesheet" href={% static "public/assets/font/fontawesome-free-6.2.1-web/css/all.min.css" %} />
+
+</head>
+<body>
+    <div class="main">
+        <div class="modal_account" onclick="hideModalprofile()">
+            <div class="modal_account_main">
+                <a href="/profile">
+                    <div class="modal_account_item">
+                        <i class="fa-solid fa-id-card"></i>
+                        <span>Profile</span>
+                    </div>
+                </a>
+                <a href="/">
+                    <div class="modal_account_item">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span> Logout<span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="side_menu">
+            <div class="menu_logo">
+                <img src={% static "/public/assets/img/main_logo_vmoneys.png" alt="" %}/>
+            </div>
+            <div class="menu_list">
+                <a href="/">
+                    <div class="list_item active">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </div>
+                </a>
+                <a href="/earn">
+                    <div class="list_item">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        <span>Earn</span>
+                    </div>
+                </a>
+                <a href="/withdraw">
+                    <div class="list_item">
+                        <i class="fa-brands fa-cc-amazon-pay"></i>
+                        <span>Withdraw</span>
+                    </div>
+                </a>
+                <a href="/leaderboard">
+                    <div class="list_item">
+                        <i class="fa-solid fa-ranking-star"></i>
+                        <span>Leaderboard</span>
+                    </div>
+                </a>
+                <a href="/ref">
+                    <div class="list_item">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <span>Referrals</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="main_content">
+            <div class="content_header">
+                <div class="header_logo">
+                    <img src={% static "/public/assets/img/main_logo_vmoneys.png" alt="" %} >
+                </div>
+                <div class="header_account">
+                    <div class="account_info">
+                        <div class="account_info_name"> <span>tuannh391</span></div>
+                        <div class="account_info_point">
+                            <i class="fa-solid fa-coins"></i>
+                            <span>1,000</span>
+
+                        </div>
+                    </div>
+                    <div class="account_avatar" onclick="showModalprofile()">
+                        <img src={% static "/public/assets/img/avatar" alt="" %}>
+                    </div>
+                </div>
+                <div class="header_btn">
+                    <a href="/signin">
+                        <div class="btn_signin">
+                            <div class="signin_icon">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                            </div>
+                            <div class="signin_text">
+                                SIGN IN
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/signup">
+                        <div class="btn_signup">
+                            <div class="signup_icon">
+                                <i class="fa-solid fa-user-pen"></i>
+                            </div>
+                            <div class="signup_text">
+                                SIGN UP
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="content_page">
+                <div class="page_timeline">
+                    <div class="timeline_online">
+                        <div class="online_icon">
+                            <i class="fa-solid fa-house-signal"></i>
+                        </div>
+                        <div class="online_number">
+                            Online <span>1,357</span>
+                        </div>
+                    </div>
+                    <div class="timeline_row">
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_policy">
+                    <div class="policy_hearder">
+                        <span>Privacy Policy</span>
+                    </div>
+                    <div class="policy_title">
+                        <span>Introduction</span>
+                    </div>
+                    <div class="policy_description">
+                        <p>This privacy policy (hereinafter "Privacy Policy"`) describes how we collect and use the Personal Data that we receive about you, as well as your rights in relation to that Personal Data, when you visit our website or use our mobile application. This Privacy Policy does not cover any information that we may receive about you through sources other than the use of our services. We are committed to the protection of your privacy while you use our service. By continuing to use our services, you are consenting to the collection and storage of your data as described in this privacy policy below.</p>
+                    </div>
+                    <div class="policy_title">
+                        <span>The information we may collect about you</span>
+                    </div>
+                    <div class="policy_description">
+                        <p>When you sign up for our services, we may ask that certain information about yourself be collected, such as your email address, full name, home address, phone number etc. This information is collected for the sole purpose of providing you with suitable surveys and offers. A particular survey may have a determined audience required, so this information helps filter out irrelevant surveys which you would not have qualified for. We will never knowingly collect personal information from anyone under 18 years of age. We also collect non-personal information, including your IP address, browser type and cookies. This information allows us to provide you with a better experience and allows us to minimize fraud on our services.</p>
+                    </div>
+                    <div class="policy_title">
+                        <span>The data we may collect about you</span>
+                    </div>
+                    <div class="policy_description">
+                        <p>When you access our website, we automatically collect certain information from your computer or mobile device, including </p>
+                    </div>
+                    <ul>
+                        <li>Your IP address</li>
+                        <li>Device information (such as device identifier, operating system name and type)</li>
+                        <li>Mobile network information</li>
+                        <li>standard web information such as your browser type and the pages you access on our website</li>
+                    </ul>
+                    <div class="policy_description">
+                        <p>This information is collected to help us administer and personalize our website, monitor and analyze trends, usage and activity on our website, and provide third parties with aggregated and anonymized statistical information about our users. We also use this information to prevent and detect any violations of our Privacy Policy or fraudulent activities on our website. </p>
+                    </div>
+                    <div class="policy_title">
+                        <span>How we keep your information safe</span>
+                    </div>
+                    <div class="policy_description">
+                        <p>We take the security of your information very seriously and implement various security measures to protect it, including the use of firewalls, data encryption, physical access controls, and authorization controls for access to your information. Only authorized employees or contractors who require access to your information to perform their job or service responsibilities will be given access to it.</p>
+                        <p>However, please note that transmitting data or information over the internet or other publicly accessible networks is not completely secure. We cannot guarantee the security of any information that you transmit to us online, and we are not liable for any unauthorized access to or interception of any information you provide. It is important to take precautions to protect your personal information, such as choosing strong passwords, avoiding public Wi-Fi networks, and not sharing sensitive information online.</p>
+                    </div>
+                    <div class="policy_title">
+                        <span>Disclosure of personal data</span>
+                    </div>
+                    <div class="policy_description">
+                        <p>While our policy is to maintain the privacy of your Personal Data as described in this Privacy Policy, there may be certain circumstances where we may need to disclose your Personal Data. These circumstances include, but are not limited to:</p>
+                        <ul>
+                            <li>To comply with any local, state, or federal laws or regulations.</li>
+                            <li>To respond to requests, such as discovery, criminal, civil, or administrative process, subpoenas, court orders, or writs from law enforcement or other governmental or legal bodies.</li>
+                            <li>To bring legal action against a user who has violated the law or violated the terms of use of our service.</li>
+                            <li>As may be necessary for the operation of our service.</li>
+                            <li>To generally cooperate with any lawful investigation about our users.</li>
+                            <li>If we suspect any fraudulent activity on our service or if we have noticed any activity which may violate our terms or other applicable rules.</li>
+                        </ul>
+                        <p>Please note that we will only disclose your Personal Data in these circumstances if we believe it is reasonable to do so in our sole and exclusive discretion.</p>
+                    </div>
+                    <div class="policy_title">
+                        <span>Third Parties</span>
+                    </div>
+                    <div class="policy_description">
+                        <p>We understand that the privacy of your information is important and we take measures to protect it when sharing with third-party partners. The information we share with our partners is limited and varies depending on the offer type. For regular 'offers', we only share your unique ID to identify your account, while for 'surveys', we also share any relevant information you have provided to us to filter out irrelevant surveys.</p>
+                        <p>It is important to note that any third-party services integrated into our site may collect information from you on their own website and have separate privacy policies. We are not responsible for their content or activities, but we are happy to investigate any concerns or dissatisfaction you may have with their policies.</p>
+                        <p>We take the protection of your personal data seriously and will continue to do our best to ensure your privacy while using our services.</p>
+                    </div>
+                    <div class="policy_title">
+                        <span>For European Residents</span>
+                    </div>
+                    <div class="policy_description">
+                        <p>As a data controller, we will process your personal data lawfully, fairly and in a transparent manner. We will collect and process your personal data for specified, explicit and legitimate purposes, and we will not process your personal data in a way that is incompatible with those purposes.</p>
+                        <p>If you are located in Europe, you have certain rights under the General Data Protection Regulation, including the right to access, rectify, or erase your personal data. You also have the right to restrict or object to the processing of your personal data, and the right to data portability. You can exercise these rights by contacting us as described in this Privacy Policy.</p>
+                        <p>Please note that we may need to retain certain information for legal or administrative purposes, such as record keeping or to detect fraudulent activities. We will only retain your personal data for as long as necessary to fulfill the purposes for which it was collected, unless we are required by law to retain it for a longer period.</p>
+                    </div>
+                    <div class="policy_title">
+                        <span>Contact Us</span>
+                    </div>
+                    <div class="policy_description">
+                        <p>If you have any inquiries or concerns about how we handle your personal information, or if you wish to file a complaint regarding anything related to this Privacy Policy, please feel free to reach out to us at <strong>contact@vmoneys.net</strong>. We value your privacy and take any issues regarding it seriously, and we will do our best to address any questions or concerns you may have in a timely and professional manner.</p>
+                    </div>
+                </div>
+                <div class="content_footer">
+                    <div class="footer_content">
+                        <div class="footer_left">
+                            <div class="left_logo">
+                                <img src={% static "/public/assets/img/footer_logo_vmoneys.png" alt="" %}>
+                            </div>
+                            <div class="footer_left_text">
+                                <div class="left_title">Vmoneys.net | All Rights Reserved</div>
+                                <div class="left_description">© Copyright 2020 - 2023</div>
+                            </div>
+
+                        </div>
+                        <div class="footer_main">
+                            <div class="footer_main_column">
+                                <div class="main_column_title">About</div>
+                                <div class="main_column_description">
+                                    <a href="/terms">Terms of Service</a>
+                                </div>
+                                <div class="main_column_description">
+                                    <a href="/privacy">Privacy Policy</a>
+                                </div>
+                            </div>
+                            <div class="footer_main_column">
+                                <div class="main_column_title">Support</div>
+                                <div class="main_column_description">
+                                    <a href="mailto:contact@vmoneys.net">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_menubottom">
+                <a href="/">
+                    <div class="menubottom_item activebtn">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Home</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/earn">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Earn</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/withdraw">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-brands fa-cc-amazon-pay"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Withdraw</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/leaderboard">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-solid fa-ranking-star"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Leaderboard</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/ref">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Referrals</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src={% static "/public/assets/js/app.js" %}></script>
+</body>
+</html>

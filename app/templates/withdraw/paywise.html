@@ -1,0 +1,572 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vmoneys</title>
+    <link rel="shortcut icon" href={% static "/public/assets/img/favicon.png" %}/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href={% static "public/assets/css/style.css" %} />
+    <link rel="stylesheet" href={% static "public/assets/font/fontawesome-free-6.2.1-web/css/all.min.css" %} />
+
+</head>
+<body>
+    <div class="main">
+        <div class="modal_account" onclick="hideModalprofile()">
+            <div class="modal_account_main">
+                <a href="/profile">
+                    <div class="modal_account_item">
+                        <i class="fa-solid fa-id-card"></i>
+                        <span>Profile</span>
+                    </div>
+                </a>
+                <a href="/">
+                    <div class="modal_account_item">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span> Logout<span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="side_menu">
+            <div class="menu_logo">
+                <img src={% static "/public/assets/img/main_logo_vmoneys.png" alt="" %}/>
+            </div>
+            <div class="menu_list">
+                <a href="/">
+                    <div class="list_item">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </div>
+                </a>
+                <a href="/earn">
+                    <div class="list_item">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        <span>Earn</span>
+                    </div>
+                </a>
+                <a href="/withdraw">
+                    <div class="list_item active">
+                        <i class="fa-brands fa-cc-amazon-pay"></i>
+                        <span>Withdraw</span>
+                    </div>
+                </a>
+                <a href="/leaderboard">
+                    <div class="list_item">
+                        <i class="fa-solid fa-ranking-star"></i>
+                        <span>Leaderboard</span>
+                    </div>
+                </a>
+                <a href="/ref">
+                    <div class="list_item">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <span>Referrals</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="main_content">
+            <div class="content_header">
+                <div class="header_logo">
+                    <img src={% static "/public/assets/img/main_logo_vmoneys.png" alt="" %} >
+                </div>
+                <div class="header_account">
+                    <div class="account_info">
+                        <div class="account_info_name"> <span>tuannh391</span></div>
+                        <div class="account_info_point">
+                            <i class="fa-solid fa-coins"></i>
+                            <span>1,000</span>
+
+                        </div>
+                    </div>
+                    <div class="account_avatar" onclick="showModalprofile()">
+                        <img src={% static "/public/assets/img/avatar" alt="" %}>
+                    </div>
+                </div>
+                <div class="header_btn">
+                    <a href="signin/">
+                        <div class="btn_signin">
+                            <div class="signin_icon">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                            </div>
+                            <div class="signin_text">
+                                SIGN IN
+                            </div>
+                        </div>
+                    </a>
+                    <a href="signup/">
+                        <div class="btn_signup">
+                            <div class="signup_icon">
+                                <i class="fa-solid fa-user-pen"></i>
+                            </div>
+                            <div class="signup_text">
+                                SIGN UP
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="content_page">
+                <div class="page_timeline">
+                    <div class="timeline_online">
+                        <div class="online_icon">
+                            <i class="fa-solid fa-house-signal"></i>
+                        </div>
+                        <div class="online_number">
+                            Online <span>1,357</span>
+                        </div>
+                    </div>
+                    <div class="timeline_row">
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               <div class="withdraw_detail">
+                  <div class="notification_modal hidden">
+                     <div class="modal_main">
+                        <div class="modal_main_warning">
+                           <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <div class="modal_main_notifi">
+                           <div class="notifi_title">Withdrawal failed</div>
+                           <div class="notifi_description">Your balance is to low</div>
+                        </div>
+                        <div class="modal_main_close">
+                           <button><i class="fa-regular fa-circle-xmark"></i></button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="detail_viewport">
+                     <div class="detail_header frame_item-paypal">
+                        <div class="detail_header_logo">
+                           <img src={% static "/public/assets/img/wise logo.svg" alt="" %}>
+                        </div>
+                        <div class="detail_header_btn">
+                           <a href="/withdraw">
+                              <div class="btn_back">
+                                 Back to Withdraw
+                              </div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="detail_main">
+                        <div class="main_text">Choose an amount</div>
+                        <div class="main_card">
+                           <div class="card_item2 card_item">
+                              <div class="card_item_selection">
+                                 <div class="selection_icon">
+                                    <img class="checkmark hidden" src={% static "/public/assets/img/check-svgrepo-com.svg" alt="" %}>
+                                 </div>
+                                 <div class="selection_amount">$ <span class="selection_amount_value">2</span></div>
+                              </div>
+                              <div class="card_item_logo">
+                                 <img src={% static "/public/assets/img/wise logo.svg" alt="" %}>
+                              </div>
+                           </div>
+                           <div class="card_item5 card_item">
+                              <div class="card_item_selection">
+                                 <div class="selection_icon">
+                                    <img class="checkmark hidden" src={% static "/public/assets/img/check-svgrepo-com.svg" alt="" %}>
+                                 </div>
+                                 <div class="selection_amount">$ <span class="selection_amount_value">5</span></div>
+                              </div>
+                              <div class="card_item_logo">
+                                 <img src={% static "/public/assets/img/wise logo.svg" alt="" %}>
+                              </div>
+                           </div>
+                           <div class="card_item10 card_item">
+                              <div class="card_item_selection">
+                                 <div class="selection_icon">
+                                    <img class="checkmark hidden" src={% static "/public/assets/img/check-svgrepo-com.svg" alt="" %}>
+                                 </div>
+                                 <div class="selection_amount">$ <span class="selection_amount_value">10</span></div>
+                              </div>
+                              <div class="card_item_logo">
+                                 <img src={% static "/public/assets/img/wise logo.svg" alt="" %}>
+                              </div>
+                           </div>
+                           <div class="card_item20 card_item">
+                              <div class="card_item_selection">
+                                 <div class="selection_icon">
+                                    <img class="checkmark hidden" src={% static "/public/assets/img/check-svgrepo-com.svg" alt="" %}>
+                                 </div>
+                                 <div class="selection_amount">$ <span class="selection_amount_value">20</span></div>
+                              </div>
+                              <div class="card_item_logo">
+                                 <img src={% static "/public/assets/img/wise logo.svg" alt="" %}>
+                              </div>
+                           </div>
+                           <div class="card_item50 card_item">
+                              <div class="card_item_selection">
+                                 <div class="selection_icon">
+                                    <img class="checkmark hidden" src={% static "/public/assets/img/check-svgrepo-com.svg" alt="" %}>
+                                 </div>
+                                 <div class="selection_amount">$ <span class="selection_amount_value">50</span></div>
+                              </div>
+                              <div class="card_item_logo">
+                                 <img src={% static "/public/assets/img/wise logo.svg" alt="" %}>
+                              </div>
+                           </div>
+                           <div class="card_item100 card_item">
+                              <div class="card_item_selection">
+                                 <div class="selection_icon">
+                                    <img class="checkmark hidden" src={% static "/public/assets/img/check-svgrepo-com.svg" alt="" %}>
+                                 </div>
+                                 <div class="selection_amount">$ <span class="selection_amount_value">100</span></div>
+                              </div>
+                              <div class="card_item_logo">
+                                 <img src={% static "/public/assets/img/wise logo.svg" alt="" %}>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="main_address">
+                           <div class="address_type frame_item-paypal">Wise</div>
+                           <div class="address_text">
+                              <input class="address_text_value" type="text" placeholder="Enter the wallet address here...">
+                           </div>
+                           <button class=" confirm_wallet frame_item-paypal">Confirm wallet</button>
+                        </div>
+                     </div>
+                     <div class="detail_confirm">
+                        <div class="confirm_view">
+                           <div class="confirm_view_address">
+                              <div class="confirm_view_address_text">Address:</div>
+                              <div class="confirm_view_address_value"><span class="address_value"></span></div>
+                           </div>
+                           <div class="confirm_view_amount">
+                              <div class="confirm_view_amount_text">Amount:</div>
+                              <div class="confirm_view_amount_value">$<span class="amount_value"></span></div>
+                           </div>
+                           <div class="confirm_view_cost">
+                              <div class="confirm_view_cost_text">Cost:</div>
+                              <div class="confirm_view_cost_value"><i class="fa-solid fa-coins"></i> <span class="cost_value"></span></div>
+                           </div>
+                        </div>
+                        <div class="confirm_btn">
+                           <button class="confirm_button">Withdraw</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="content_footer">
+                    <div class="footer_content">
+                        <div class="footer_left">
+                            <div class="left_logo">
+                                <img src={% static "/public/assets/img/footer_logo_vmoneys.png" alt="" %}>
+                            </div>
+                            <div class="footer_left_text">
+                                <div class="left_title">Vmoneys.net | All Rights Reserved</div>
+                                <div class="left_description">© Copyright 2020 - 2023</div>
+                            </div>
+
+                        </div>
+                        <div class="footer_main">
+                            <div class="footer_main_column">
+                                <div class="main_column_title">About</div>
+                                <div class="main_column_description">
+                                    <a href="/terms">Terms of Service</a>
+                                </div>
+                                <div class="main_column_description">
+                                    <a href="/privacy">Privacy Policy</a>
+                                </div>
+                            </div>
+                            <div class="footer_main_column">
+                                <div class="main_column_title">Support</div>
+                                <div class="main_column_description">
+                                    <a href="mailto:contact@vmoneys.net">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_menubottom">
+                <a href="/">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Home</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/earn">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Earn</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/withdraw">
+                    <div class="menubottom_item activebtn">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-brands fa-cc-amazon-pay"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Withdraw</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/leaderboard">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-solid fa-ranking-star"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Leaderboard</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/ref">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Referrals</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+         </div>
+      </div>
+        <script src={% static "/public/assets/js/app.js" %}></script>
+      <script>
+         const cardItems = document.querySelectorAll('.card_item');
+         const confirmWalletButton = document.querySelector('.confirm_wallet');
+
+         cardItems.forEach((item) => {
+           item.addEventListener('click', () => {
+             // Remove 'selected' class from all card items
+             cardItems.forEach((item) => {
+               item.classList.remove('selected');
+               item.querySelector('.checkmark').classList.add('hidden');
+               item.querySelector('.selection_amount').classList.remove('selected');
+             });
+             // Add 'selected' class to clicked card item
+             item.classList.add('selected');
+             item.querySelector('.checkmark').classList.remove('hidden');
+             item.querySelector('.selection_amount').classList.add('selected');
+
+             // Update the amount value in the confirmation view
+             const amountValue = item.querySelector('.selection_amount_value').textContent;
+             document.querySelector('.amount_value').textContent = amountValue.trim();
+             document.querySelector('.cost_value').textContent = amountValue.trim()*100;
+           });
+         });
+         confirmWalletButton.addEventListener('click', () => {
+           // Get the value of the input field
+           const inputValue = document.querySelector('.address_text_value').value;
+
+           // Set the value of the amount field in the confirmation view to the input value
+           document.querySelector('.address_value').textContent = inputValue;
+         });
+
+
+      </script>
+      <script>
+         //button withdraw
+         const confirmButton4 = document.querySelector('.confirm_button');
+
+         // change text
+         confirmButton4.addEventListener('click', function() {
+           confirmButton4.textContent = 'Processing...';
+
+           // return "Withdraw"
+           setTimeout(function() {
+             confirmButton4.textContent = 'Withdraw';
+
+             // show notification
+             const notificationModal = document.querySelector('.notification_modal');
+             notificationModal.classList.remove('hidden');
+             setTimeout(() => {
+               notificationModal.classList.add('hidden');
+             }, Math.floor(Math.random() * 3000) + 2000); // Random 5~7s
+           }, Math.floor(Math.random() * 3000) + 2000); // Random 5~7s
+         });
+      </script>
+      <script></script>
+      <script>
+         // check input data => enable button withdraw
+         setInterval(function() {
+         var amountValue = document.querySelector(".amount_value").textContent;
+         var costValue = document.querySelector(".cost_value").textContent;
+         var confirmButton = document.querySelector(".confirm_button");
+
+         if (amountValue === "" || costValue === "") {
+         confirmButton.disabled = true;
+         } else {
+         confirmButton.disabled = false;
+         }
+         }, 500);
+      </script>
+   </body>
+</html>

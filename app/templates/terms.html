@@ -1,0 +1,437 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vmoneys</title>
+    <link rel="shortcut icon" href={% static "/public/assets/img/favicon.png" %}/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href={% static "public/assets/css/style.css" %} />
+    <link rel="stylesheet" href={% static "public/assets/font/fontawesome-free-6.2.1-web/css/all.min.css" %} />
+
+</head>
+<body>
+    <div class="main">
+        <div class="modal_account" onclick="hideModalprofile()">
+            <div class="modal_account_main">
+                <a href="/profile">
+                    <div class="modal_account_item">
+                        <i class="fa-solid fa-id-card"></i>
+                        <span>Profile</span>
+                    </div>
+                </a>
+                <a href="/">
+                    <div class="modal_account_item">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span> Logout<span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="side_menu">
+            <div class="menu_logo">
+                <img src={% static "/public/assets/img/main_logo_vmoneys.png" alt="" %}/>
+            </div>
+            <div class="menu_list">
+                <a href="/">
+                    <div class="list_item active">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </div>
+                </a>
+                <a href="/earn">
+                    <div class="list_item">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        <span>Earn</span>
+                    </div>
+                </a>
+                <a href="/withdraw">
+                    <div class="list_item">
+                        <i class="fa-brands fa-cc-amazon-pay"></i>
+                        <span>Withdraw</span>
+                    </div>
+                </a>
+                <a href="/leaderboard">
+                    <div class="list_item">
+                        <i class="fa-solid fa-ranking-star"></i>
+                        <span>Leaderboard</span>
+                    </div>
+                </a>
+                <a href="/ref">
+                    <div class="list_item">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <span>Referrals</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="main_content">
+            <div class="content_header">
+                <div class="header_logo">
+                    <img src={% static "/public/assets/img/main_logo_vmoneys.png" alt="" %} >
+                </div>
+                <div class="header_account">
+                    <div class="account_info">
+                        <div class="account_info_name"> <span>tuannh391</span></div>
+                        <div class="account_info_point">
+                            <i class="fa-solid fa-coins"></i>
+                            <span>1,000</span>
+
+                        </div>
+                    </div>
+                    <div class="account_avatar" onclick="showModalprofile()">
+                        <img src={% static "/public/assets/img/avatar" alt="" %}>
+                    </div>
+                </div>
+                <div class="header_btn">
+                    <a href="/signin">
+                        <div class="btn_signin">
+                            <div class="signin_icon">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                            </div>
+                            <div class="signin_text">
+                                SIGN IN
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/signup">
+                        <div class="btn_signup">
+                            <div class="signup_icon">
+                                <i class="fa-solid fa-user-pen"></i>
+                            </div>
+                            <div class="signup_text">
+                                SIGN UP
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="content_page">
+                <div class="page_timeline">
+                    <div class="timeline_online">
+                        <div class="online_icon">
+                            <i class="fa-solid fa-house-signal"></i>
+                        </div>
+                        <div class="online_number">
+                            Online <span>1,357</span>
+                        </div>
+                    </div>
+                    <div class="timeline_row">
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_policy">
+                    <div class="policy_hearder">
+                        <span>Terms of Service</span>
+                    </div>
+                    <div class="policy_description">
+                        <p>Welcome to vmoneys.net. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern vmoneys.net's relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please discontinue use of our website.</p>
+                    </div>
+                    <div class="policy_title">
+                        <span>Terms</span>
+                    </div>
+                    <div class="policy_description">
+                        <p>As a user of our services, you agree to abide by our Terms and Conditions, which include compliance with all applicable laws and regulations. Please be aware that you are solely responsible for complying with any local laws that may apply to you.</p>
+                        <p>Additionally, please note that this site is protected by applicable copyright law, and any unauthorized use or reproduction of our content is strictly prohibited.</p>
+                        <p>We reserve the right to refuse service to anyone, for any reason, at any time. If you violate our Terms and Conditions, we may terminate your access to our services without notice.</p>
+                    </div>
+                    <div class="policy_title">
+                        <span>Account Bans</span>
+                    </div>
+                    <div class="policy_description">
+                        <p>Please be aware that we reserve the right to temporarily or permanently ban users at any time for any activity we deem to be suspicious or potentially fraudulent. This includes:</p>
+                    </div>
+                    <ul>
+                        <li>Using VPN, VPS, or emulator software</li>
+                        <li>Using fake phone numbers or VOIP when verifying your account</li>
+                        <li>The use of multiple accounts or more than one account per household receiving offer chargebacks</li>
+                        <li>Completing offers on another user's account</li>
+                        <li>Completing numerous offers in a short period of time</li>
+                        <li>Completing suspicious offers that have a high rate of chargeback.</li>
+                    </ul>
+                    <p>By using our services, you agree to comply with these terms and understand that failure to do so may result in account suspension or termination.</p>
+                    
+                    <div class="policy_title">
+                        <span>Coins</span>
+                    </div>
+                    <div class="policy_description">
+                        <p>Please note that all 'currency' values on this site are represented by Coins, which are virtual tokens that do not have any real-life value. These Coins can only be used on this site for the purpose of redeeming our withdrawal options, which may include gift cards, cryptocurrency, or other similar options. It is important to understand that Coins cannot be redeemed for actual money or other tangible assets outside of the site. We reserve the right to modify, add or remove any withdrawal options at any time without prior notice.</p>
+                    </div>
+                    <div class="policy_title">
+                        <span>Offer Holds</span>
+                    </div>
+                    <div class="policy_description">
+                        <p>We reserve the right to temporarily hold offer credits for up to 60 days after an offer has been completed. This is to allow for the proper validation and processing of the offer completion by our third-party partners. We will make every effort to release the credits as soon as possible, and in most cases, they will be credited to your account within a few hours or days. However, we cannot guarantee an exact timeframe for the release of the credits. We appreciate your understanding and patience in this matter.</p>
+                    </div>
+                    <div class="policy_title">
+                        <span>Refunds</span>
+                    </div>
+                    <div class="policy_description">
+                        <p>You may receive a refund if the site has made an error. Any other error, such as an error with PayPal, or mistakes inputting withdrawal addresses are outside of our control, and are not eligible for refund from us. You would need to contact the provider directly to receive a refund.</p>
+                        <p>We cannot refund coins for withdrawing to a banned/limited PayPal account, however if you contact PayPal and arrange for the transaction to be refunded back into our account, we will be able to refund your coins when we receive the funds back.</p>
+                    </div>
+                    <div class="policy_title">
+                        <span>Contact Us</span>
+                    </div>
+                    <div class="policy_description">
+                        <p>If you have any questions about these Terms and Conditions, You can contact us:</p>
+                        <ul>
+                            <li>By email: contact@vmoneys.net</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="content_footer">
+                    <div class="footer_content">
+                        <div class="footer_left">
+                            <div class="left_logo">
+                                <img src={% static "/public/assets/img/footer_logo_vmoneys.png" alt="" %}>
+                            </div>
+                            <div class="footer_left_text">
+                                <div class="left_title">Vmoneys.net | All Rights Reserved</div>
+                                <div class="left_description">© Copyright 2020 - 2023</div>
+                            </div>
+
+                        </div>
+                        <div class="footer_main">
+                            <div class="footer_main_column">
+                                <div class="main_column_title">About</div>
+                                <div class="main_column_description">
+                                    <a href="/terms">Terms of Service</a>
+                                </div>
+                                <div class="main_column_description">
+                                    <a href="/privacy">Privacy Policy</a>
+                                </div>
+                            </div>
+                            <div class="footer_main_column">
+                                <div class="main_column_title">Support</div>
+                                <div class="main_column_description">
+                                    <a href="mailto:contact@vmoneys.net">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_menubottom">
+                <a href="/">
+                    <div class="menubottom_item activebtn">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Home</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/earn">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Earn</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/withdraw">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-brands fa-cc-amazon-pay"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Withdraw</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/leaderboard">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-solid fa-ranking-star"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Leaderboard</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/ref">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Referrals</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src={% static "/public/assets/js/app.js" %}></script>
+</body>
+</html>

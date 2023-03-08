@@ -1,0 +1,389 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <title>Lootcash.net: The easiest and safest way to make money online from anywhere.</title>
+        <link rel="canonical" href="https://lootcash.net/" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1500" />
+        <meta property="og:image:height" content="500" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://lootcash.net" />
+        <meta property="og:title" content="Lootcash.net: the easiest and safest way to make money online from anywhere" />
+        <meta property="og:description" content="Lootcash.net: digital rewards and gift cards made easy. Only play games ,answer surveys for money. Instant withdrawals with PayPal, GooglePlay, Appstore, Steam gift card &amp; much more." />
+        <meta property="twitter:title" content="Lootcash.net: the easiest and safest way to make money online from anywhere| Reward App | Offerwalls | Surveys! | Lootcash.net" />
+        <meta property="twitter:description" content="Lootcash.net: the easiest and safest way to make money online from anywhere| Reward App | Offerwalls | Surveys! | Lootcash.net " />
+        <meta property="twitter:image" content="https:/lootcash.net/static/public/img/ogbanner.png" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta name="description" content="Lootcash.net: the easiest and safest way to make money online from anywhere| Reward App | Offerwalls | Surveys! | Lootcash.net " />
+        <link rel="icon" type="image/x-icon" href={% static "/public/assets/weblead/images/fav.ico"%} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+            integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href={% static "public/assets/weblead/app.css"%} />
+    </head>
+    <body>
+        <div class="mainheader">
+            <div class="topheader">
+                <div class="left-menu-icon" id="iconleftnav" onclick="openleftnav();">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="leftnav" class="left-navigation">
+                    <div class="left-nav-header">
+                        <a href="/" class="logo" alma-page="home" alma-route="/">
+                            <a href="/"><img src={% static "public/assets/images/main_logo.png"%} width="130" /></a>
+                        </a>
+                    </div>
+                    <div class="top-section">
+                        <a class="menu_button" href="/earn">
+                            <div class="left-menu-item" style="display: block; background-image: url({% static "public/assets/images/btn_earn.png"%}); width: 136px; height: 40px;"></div>
+                        </a>
+                        <a class="menu_button" href="/rewards">
+                            <div class="left-menu-item" style="display: block; background-image: url({% static "public/assets/images/btn_rewards.png"%}); width: 136px; height: 40px;"></div>
+                        </a>
+                        <a class="menu_button" href="/leaderboard">
+                            <div class="left-menu-item" style="display: block; background-image: url({% static "public/assets/images/btn_leaderboard.png"%}); width: 169px; height: 40px;"></div>
+                        </a>
+                        <a class="menu_button" href="/ref">
+                            <div class="left-menu-item" style="display: block; background-image: url({% static "public/assets/images/invite-friends.png"%}); width: 147px; height: 40px;"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <a class="logo" href="/">
+                    <img src={% static "public/assets/images/main_logo.png" %} alt="" />
+                </a>
+                <div class="navigation">
+                    <a class="menu_button" href="/earn">
+                        <div class="item" style="display: block; background-image: url({% static "public/assets/images/btn_earn.png"%}); width: 136px; height: 40px;"></div>
+                    </a>
+                    <a class="menu_button" href="/rewards">
+                        <div class="item" style="display: block; background-image: url({% static "public/assets/images/btn_rewards.png"%}); width: 136px; height: 40px;"></div>
+                    </a>
+                    <a class="menu_button" href="/leaderboard">
+                        <div class="item" style="display: block; background-image: url({% static "public/assets/images/btn_leaderboard.png"%}); width: 169px; height: 40px;"></div>
+                    </a>
+                    <a class="menu_button" href="/ref">
+                        <div class="item" style="display: block; background-image: url({% static "public/assets/images/invite-friends.png"%}); width: 147px; height: 40px;"></div>
+                    </a>
+                </div>
+                {% if user.is_authenticated %}
+                                    <div class="account">
+                   <div class="walletContainer">
+                        <div class="wallet_wrapper">
+                            <div class="coinImgWrapper">
+                                <img draggable="false" src={%  static "/public/assets/images/coins.png" %} alt="GEM" class="coinImg">
+                            </div>
+                            <span class="style_balanceWrapper__3aQP2">{{ user.user_coins}}</span>
+                        </div>
+                        <button class="style_walletButton__Y6bDE baseButton">
+                            <span class="baseButton__waveAnimation"></span>
+                            <span class="baseButton__label style_btnLabel__2Z9RY">
+                                <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg" class="style_walletIcon__2h9hF">
+                                    <rect width="45" height="45" rx="22.5" fill="#EC9D11"></rect>
+                                    <g clip-path="url(#clip0_132_7263)">
+                                        <path
+                                            d="M21.1724 33C20.9689 33 20.7824 32.8786 20.7134 32.7029C20.6442 32.5267 20.7048 32.3222 20.8629 32.2037C21.0259 32.0815 21.2599 32.0694 21.4368 32.1735C21.6026 32.2711 21.6891 32.4572 21.652 32.6351C21.6083 32.8439 21.4041 33 21.1724 33Z"
+                                            fill="black"
+                                        ></path>
+                                        <path
+                                            d="M28.7626 25.2417H27.9189C27.6493 25.2417 27.4307 25.0405 27.4307 24.7925C27.4307 24.5444 27.6493 24.3433 27.9189 24.3433H28.7626C29.0323 24.3433 29.2509 24.5444 29.2509 24.7925C29.2509 25.0405 29.0323 25.2417 28.7626 25.2417Z"
+                                            fill="black"
+                                        ></path>
+                                        <path
+                                            d="M31.5215 17.2572L29.3058 11.218C29.1397 10.7652 28.7918 10.399 28.3262 10.1868C27.8606 9.97468 27.3331 9.94202 26.841 10.0949L14.2422 14.0073C13.226 14.3228 12.6784 15.3401 13.0214 16.2749L13.1353 16.5853H12.0718C11.8021 16.5853 11.5835 16.7864 11.5835 17.0345V32.5508C11.5835 32.7989 11.8021 33 12.0718 33H18.9564C19.226 33 19.4446 32.7989 19.4446 32.5508C19.4446 32.3027 19.226 32.1016 18.9564 32.1016H12.56V30.9733H29.1308C30.2792 30.9733 31.2134 30.1138 31.2134 29.0573V27.1094H32.4398V29.0573C32.4398 30.736 30.9554 32.1016 29.1308 32.1016H23.3709C23.1012 32.1016 22.8826 32.3028 22.8826 32.5508C22.8826 32.7989 23.1012 33.0001 23.3709 33.0001H29.1309C31.4939 33.0001 33.4164 31.2313 33.4164 29.0574V20.528C33.4164 19.1677 32.6637 17.9662 31.5215 17.2572ZM13.9467 15.9876C13.7759 15.5221 14.0486 15.0156 14.5545 14.8585L27.1533 10.9461C27.3984 10.87 27.661 10.8863 27.8928 10.9919C28.1246 11.0975 28.2979 11.2799 28.3806 11.5054L30.2989 16.7341C29.9275 16.6371 29.5356 16.5853 29.1309 16.5853H29.0076L28.1966 14.3747C28.1551 14.2618 28.0667 14.1687 27.9507 14.1158C27.8346 14.0629 27.7005 14.0546 27.5778 14.0927C26.5992 14.3967 26.3272 14.2164 25.8655 12.958C25.7792 12.7229 25.5022 12.5966 25.2467 12.6761L17.2107 15.1715C16.9552 15.2508 16.818 15.5057 16.9043 15.7408C17.0069 16.0205 17.1076 16.3224 17.1485 16.5853H14.1659L13.9467 15.9876ZM17.976 15.8821L25.1061 13.6679C25.4421 14.4544 25.9167 15.1115 26.9154 15.1114C27.0698 15.1114 27.2371 15.0956 27.4181 15.0622L27.9441 16.496C27.8791 16.5247 27.8175 16.5544 27.759 16.5852H18.1312C18.107 16.3559 18.0493 16.1189 17.976 15.8821ZM13.8017 17.4837C13.8106 17.4839 13.8195 17.4839 13.8285 17.4837H29.1308C30.9554 17.4837 32.4399 18.8494 32.4399 20.528V22.4758H31.2134V20.5279C31.2134 19.4715 30.2792 18.612 29.1309 18.612H12.56V17.4837H13.8017ZM30.2368 29.0573C30.2368 29.6183 29.7407 30.0748 29.1308 30.0748H12.56V19.5104H29.1308C29.7407 19.5104 30.2368 19.9668 30.2368 20.5279V22.4758H27.9324C26.5438 22.4758 25.4142 23.5151 25.4142 24.7925C25.4142 26.07 26.5439 27.1093 27.9324 27.1093H30.2368V29.0573ZM27.9324 26.211C27.0823 26.211 26.3907 25.5747 26.3907 24.7926C26.3907 24.0106 27.0823 23.3743 27.9324 23.3743H32.4398V26.211H27.9324Z"
+                                            fill="black"
+                                        ></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_132_7263"><rect width="25" height="23" fill="white" transform="translate(10 10)"></rect></clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </button>
+                   </div>
+
+                   <button class="style_avatarButton__rZHm5" onclick="toggleAccount()">
+                    <div class="user_detail"  >
+                        <div class="style_wrapper__1PQ3w style_userIcon__1IpTe">
+                            {%  if user.avatar == none %}
+                                  <img alt="avatar" src="https://eu.ui-avatars.com/api/?background=random&amp;color=fff&amp;name={{user.username}}" class="style_opacity__3ZbZM" />
+                                {%  else %}
+                            <img alt="avatar" src="{{ user.avatar}}" class="style_opacity__3ZbZM" />
+                                {%  endif %}
+
+                        </div>
+
+                          <img src={% static "public/assets/images/profileMenuIcon.676ee65a.svg"%} alt="" />
+                    </div>
+                    </button>
+                    <div id="dropAccount" class="style_root__MezYi close">
+                        <div class="style_curtain__1_ass style_curtain__transparent__3v0eM"></div>
+                        <div class="style_paper__Qoskh">
+                            <div class="style_root__1gAQQ style_open__16m6Y">
+                                <div class="style_triangleDiv__3iPhD style_triangle__3Ew9t"></div>
+                                <div class="style_root__3eMJ0 style_menu__jHmQf">
+                                    <div>
+                                        <a class="style_link__3nfqH style_menuItem__2yLfs style_root__3IJvr " href="/profile">
+                                            <div class="dropButton" >
+                                                <div class="style_icon__3QvOR"><img src= {% static "public/assets/images/profile.0503add5.svg"%} alt="" /></div>
+                                                <span class="baseButton__label">
+                                                    Profile
+                                                </span>
+                                            </div>
+
+                                        </a>
+                                        <a class="style_link__3nfqH style_menuItem__2yLfs style_root__3IJvr " href="/signout">
+                                            <div class="dropButton" >
+                                                <div class="style_icon__3QvOR">
+                                                    <img src={% static "public/assets/images/logout.2c0c1d92.svg"%} alt="" /></div>
+                                                <span class="baseButton__label">
+                                                    Logout
+                                                </span>
+                                            </div>
+
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <div class="account">
+                    <a id="btnsignin" href="/signin" class="account-item login-btn">
+                        <svg
+                            width="16"
+                            height="16"
+                            fill="#fff"
+                            version="1.1"
+                            id="Icons"
+                            xmlns="http://www.w3.org/2000/svg"
+                            x="0px"
+                            y="0px"
+                            viewBox="0 0 32 32"
+                            style="enable-background: new 0 0 32 32;"
+                            xml:space="preserve"
+                        >
+                            <path
+                                d="M28,25c0.9-1.2,1.6-2.5,2.1-3.9c0-0.1,0.1-0.2,0.1-0.4c0.1-0.2,0.1-0.5,0.2-0.7c0.1-0.2,0.1-0.4,0.2-0.6
+                   c0-0.2,0.1-0.4,0.1-0.6c0.1-0.3,0.1-0.6,0.1-0.8c0-0.2,0-0.3,0.1-0.5c0-0.5,0.1-0.9,0.1-1.4c0-8.3-6.7-15-15-15S1,7.7,1,16
+                   c0,0.5,0,0.9,0.1,1.4c0,0.2,0,0.3,0.1,0.5c0,0.3,0.1,0.6,0.1,0.8c0,0.2,0.1,0.4,0.1,0.6c0,0.2,0.1,0.4,0.2,0.6
+                   c0.1,0.2,0.1,0.5,0.2,0.7c0,0.1,0.1,0.2,0.1,0.4C2.4,22.5,3.1,23.8,4,25v0l0,0c2.7,3.6,7.1,6,12,6S25.2,28.6,28,25L28,25L28,25z
+                    M16,29c-4.6,0-8.6-2.4-10.9-6c1.6-2.6,4.1-4.5,7.1-5.4C10.8,16.5,10,14.8,10,13c0-3.3,2.7-6,6-6s6,2.7,6,6c0,1.8-0.8,3.5-2.1,4.6
+                   c2.9,0.9,5.4,2.9,7.1,5.4C24.6,26.6,20.6,29,16,29z"
+                            />
+                        </svg>
+                        <span>SIGN IN</span>
+                    </a>
+                    <a id="btnsignup" href="/signup" class="account-item register-btn">
+                        <svg
+                                width="16"
+                                height="16"
+                                fill="#fff"
+                                version="1.1"
+                                id="Layer_1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                x="0px"
+                                y="0px"
+                                viewBox="0 0 85.07 122.88"
+                                style="enable-background: new 0 0 85.07 122.88;"
+                                xml:space="preserve"
+                        >
+                            <g>
+                                <path
+                                    d="M60.78,43.44c-1.49,0.81-3.35,0.26-4.15-1.22c-0.81-1.49-0.26-3.35,1.23-4.15c7.04-3.82,10.32-8.76,10.98-13.59 c0.35-2.58-0.05-5.17-1.02-7.57c-0.99-2.43-2.56-4.64-4.55-6.42c-3.87-3.46-9.3-5.28-14.97-3.87c-2.3,0.57-4.29,1.72-6.03,3.34 c-1.85,1.72-3.45,3.97-4.85,6.63c-0.79,1.5-2.64,2.07-4.13,1.29c-1.5-0.79-2.07-2.64-1.29-4.13c1.72-3.26,3.73-6.06,6.11-8.28 c2.49-2.31,5.38-3.97,8.74-4.8c7.8-1.93,15.23,0.53,20.51,5.25c2.68,2.4,4.81,5.39,6.15,8.69c1.35,3.33,1.9,6.99,1.39,10.7 C73.99,31.93,69.75,38.57,60.78,43.44L60.78,43.44z M37.32,67.61c-11.6-15.58-11.88-30.34,2.2-44.06l-10.14-5.6 C21.26,14.79,6.36,38.08,12.12,44.3l7.9,11.72l-1.63,3.4c-0.45,1.01-0.01,1.72,1.09,2.21l1.07,0.29L0,102.59l4.16,8.87l8.32-2.45 l2.14-4.16l-2.05-3.84l4.52-0.97L18.14,98l-2.36-3.6l1.55-3.01l4.51-0.57l1.47-2.85l-2.52-3.29l1.61-3.12l4.6-0.75l6.26-11.95 l1.06,0.58C36.16,70.56,37.11,69.84,37.32,67.61L37.32,67.61z M59.15,77.38l-3.06,11.42l-4.25,1.68l-0.89,3.33l3.1,2.63l-0.81,3.03 l-4.2,1.48l-0.86,3.2l3.01,2.95l-0.58,2.17l-4.13,1.87l2.76,3.25l-1.19,4.43l-7.45,4.07l-5.82-7.63l11.1-41.43l-2.69-0.72 c-0.55-0.15-0.89-0.72-0.74-1.28l1.13-4.21c-8.14-6.17-12.17-16.85-9.37-27.32c3.6-13.45,17.18-21.57,30.64-18.55 c0.06,0.72,0.05,1.45-0.05,2.18c-0.25,1.82-1.04,3.69-2.5,5.5c-0.2,0.24-0.41,0.49-0.63,0.73c-4.3-0.28-8.33,2.5-9.49,6.82 c-0.5,1.86-0.39,3.74,0.2,5.43c0.14,0.6,0.37,1.18,0.67,1.75c0.71,1.3,1.75,2.29,2.97,2.92c0.8,0.53,1.7,0.93,2.67,1.2 c4.83,1.29,9.78-1.49,11.22-6.24c1.46-1.29,2.73-2.65,3.82-4.05c2.12-2.73,3.57-5.63,4.43-8.58c5.84,6.3,8.41,15.37,6.02,24.29 c-2.8,10.47-11.65,17.71-21.77,18.98l-1.13,4.21c-0.15,0.55-0.72,0.89-1.28,0.74L59.15,77.38L59.15,77.38z"
+                                />
+                            </g>
+                        </svg>
+
+                        <span>SIGN UP</span>
+                    </a>
+                </div>
+                {%  endif %}
+            </div>
+            <div class="earnfeed">
+                <div class="earnFeedBar">
+
+                    <div class="topEarnFeed unselectable" id="topEarnFeed">
+                        <div class="topEarnFeedInnerParent">
+                            <div  id="timeline"  class="topEarnFeedInner">
+
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+            </div>
+        </div>
+
+        </div>
+
+            </div>
+        <div id="content"  class="home-page">
+
+            <div class="earnpage">
+                <div id = "WallModal" class="modal">
+
+                <div class="earnWallModal" >
+                    <div class="modal-content">
+                        <div class="modalTitle">
+                                IP:
+                            <a href="#!" class="modal-close waves-effect btn-flat closeModalBtn">
+                                <i id="closeModal" class="far fa-times-circle"></i>
+                            </a>
+                        </div>
+                        <div id='iframe' class="earnModalIframeContain">
+
+                        </div>
+                    </div>
+                </div>
+
+                    </div>
+
+                <div class="earn-page-section">
+                    <div class="offerwall-section">
+                        <div class="network__list">
+                            <div class="item adgate"  onclick="modalwall('AdgateMedia','{{request.session.member_id}}');">
+                                <div class="network_logo">
+                                    <div class="earn-box-play-button">
+                                        <img src={%  static "public/assets/weblead/images/play-offer.svg"%} >
+                                    </div>
+                                    <div class="earn-box-view-button">
+                                        <span>View Offer</span>
+                                    </div>
+                                    <div class="earn-box-network-button">
+                                        <img src={%  static "public/assets/weblead/images/adgate.webp"%} />
+                                    </div>
+                                </div>
+                                <p class="wallName">AdGate</p>
+
+                            </div>
+                             <div class="item lootably" onclick="modalwall('Lootably','{{request.session.member_id}}');">
+                                <div class="network_logo">
+                                    <div class="earn-box-play-button">
+                                        <img src={%  static "public/assets/weblead/images/play-offer.svg"%} >
+                                    </div>
+                                    <div class="earn-box-view-button">
+                                        <span>View Offer</span>
+                                    </div>
+                                    <div class="earn-box-network-button">
+                                        <img src={%  static "public/assets/weblead/images/lootably.webp"%} />
+                                    </div>
+                                </div>
+                                <p class="wallName">Lootably</p>
+
+                            </div>
+                            <div class="item offertoro" onclick="modalwall('Offertoro','{{request.session.member_id}}');">
+                                <div class="network_logo">
+                                    <div class="earn-box-play-button">
+                                        <img src={%  static "public/assets/weblead/images/play-offer.svg" %} />
+                                    </div>
+                                    <div class="earn-box-view-button">
+                                        <span>View Offer</span>
+                                    </div>
+                                    <div class="earn-box-network-button">
+                                        <img src={%  static "public/assets/weblead/images/offertoro.webp" %}>
+                                    </div>
+                                </div>
+                                <p class="wallName">Offertoro</p>
+
+                            </div>
+                            <div class="item adgem" onclick="modalwall('Adgem','{{request.session.member_id}}');">
+                                <div class="network_logo">
+                                    <div class="earn-box-play-button">
+                                        <img src={%  static "public/assets/weblead/images/play-offer.svg" %} />
+                                    </div>
+                                    <div class="earn-box-view-button">
+                                        <span>View Offer</span>
+                                    </div>
+                                    <div class="earn-box-network-button">
+                                        <img src={%  static "public/assets/weblead/images/adgem.webp" %}>
+                                    </div>
+                                </div>
+                                <p class="wallName">Adgem</p>
+
+                            </div>
+                            <div class="item ayet"  onclick="modalwall('Ayetstudio','{{request.session.member_id}}');">
+                                <div class="network_logo">
+                                    <div class="earn-box-play-button">
+                                        <img src={%  static "public/assets/weblead/images/play-offer.svg"%} >
+                                    </div>
+                                    <div class="earn-box-view-button">
+                                        <span>View Offer</span>
+                                    </div>
+                                    <div class="earn-box-network-button">
+                                        <img src={%  static "public/assets/weblead/images/ayetstudios.webp"%} />
+                                    </div>
+                                </div>
+                                <p class="wallName">AYETSTUDIOS</p>
+
+                            </div>
+
+                            <div class="item adgate"  onclick="modalwall('Notik','{{request.session.member_id}}');">
+                                <div class="network_logo">
+                                    <div class="earn-box-play-button">
+                                        <img src={%  static "public/assets/weblead/images/play-offer.svg"%} >
+                                    </div>
+                                    <div class="earn-box-view-button">
+                                        <span>View Offer</span>
+                                    </div>
+                                    <div class="earn-box-network-button">
+                                        <img src={%  static "public/assets/weblead/images/notik.png"%} />
+                                    </div>
+                                </div>
+                                <p class="wallName">NOTIK</p>
+                            </div>
+                            <div class="item cpalead" onclick="modalwall('Admantium','{{request.session.member_id}}');">
+                                <div class="network_logo">
+                                    <div class="earn-box-play-button">
+                                        <img src={%  static "public/assets/weblead/images/play-offer.svg"%} >
+                                    </div>
+                                    <div class="earn-box-view-button">
+                                        <span>View Offer</span>
+                                    </div>
+                                    <div class="earn-box-network-button">
+                                        <img src={%  static "public/assets/weblead/images/admantium_logo.png"%} />
+                                    </div>
+                                </div>
+                                <p class="wallName">Cpalead</p>
+
+                            </div>
+                            <div class="item cpalead" onclick="modalwall('Cpalead','{{request.session.member_id}}');">
+                                <div class="network_logo">
+                                    <div class="earn-box-play-button">
+                                        <img src={%  static "public/assets/weblead/images/play-offer.svg"%} >
+                                    </div>
+                                    <div class="earn-box-view-button">
+                                        <span>View Offer</span>
+                                    </div>
+                                    <div class="earn-box-network-button">
+                                        <img src={%  static "public/assets/weblead/images/cpalead.png"%} />
+                                    </div>
+                                </div>
+                                <p class="wallName">Cpalead</p>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src={% static "public/assets/weblead/webapp.js" %}></script>
+
+    </body>
+</html>

@@ -1,0 +1,405 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vmoneys</title>
+    <link rel="shortcut icon" href={% static "/public/assets/img/favicon.png" %}/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href={% static "public/assets/css/style.css" %} />
+    <link rel="stylesheet" href={% static "public/assets/font/fontawesome-free-6.2.1-web/css/all.min.css" %} />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src={% static "public/assets/js/vendor/countup.js" %} ></script>
+</head>
+<body>
+    <div class="main">
+        <div class="modal_account" onclick="hideModalprofile()">
+            <div class="modal_account_main">
+                <a href="/profile">
+                    <div class="modal_account_item">
+                        <i class="fa-solid fa-id-card"></i>
+                        <span>Profile</span>
+                    </div>
+                </a>
+                <a href="/">
+                    <div class="modal_account_item">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span> Logout<span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="side_menu">
+            <div class="menu_logo">
+                <img src={% static "/public/assets/img/main_logo_vmoneys.png" alt="" %}/>
+            </div>
+            <div class="menu_list">
+                <a href="/">
+                    <div class="list_item active">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </div>
+                </a>
+                <a href="/earn">
+                    <div class="list_item">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        <span>Earn</span>
+                    </div>
+                </a>
+                <a href="/withdraw">
+                    <div class="list_item">
+                        <i class="fa-brands fa-cc-amazon-pay"></i>
+                        <span>Withdraw</span>
+                    </div>
+                </a>
+                <a href="/leaderboard">
+                    <div class="list_item">
+                        <i class="fa-solid fa-ranking-star"></i>
+                        <span>Leaderboard</span>
+                    </div>
+                </a>
+                <a href="/ref">
+                    <div class="list_item">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <span>Referrals</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="main_content">
+            <div class="content_header">
+                <div class="header_logo">
+                    <img src={% static "/public/assets/img/main_logo_vmoneys.png" alt="" %} >
+                </div>
+                 {% if user.is_authenticated %}
+                <div class="header_account">
+                    <div class="account_info">
+                        <div class="account_info_name"> <span>{{user.username}}</span></div>
+                        <div class="account_info_point">
+                            <i class="fa-solid fa-coins"></i>
+                            <span>{{ user.user_coins}}</span>
+
+                        </div>
+                    </div>
+                    <div class="account_avatar" onclick="showModalprofile()">
+                                             {%  if user.avatar == none %}
+                                  <img alt="avatar" src="https://eu.ui-avatars.com/api/?background=random&amp;color=fff&amp;name={{user.username}}"/>
+                                {%  else %}
+                            <img alt="avatar" src="{{ user.avatar}}" />
+                                {%  endif %}
+                    </div>
+                </div>
+                {% else %}
+                <div class="header_btn">
+                    <a href="/signin">
+                        <div class="btn_signin">
+                            <div class="signin_icon">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                            </div>
+                            <div class="signin_text">
+                                SIGN IN
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/signup">
+                        <div class="btn_signup">
+                            <div class="signup_icon">
+                                <i class="fa-solid fa-user-pen"></i>
+                            </div>
+                            <div class="signup_text">
+                                SIGN UP
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {%  endif %}
+            </div>
+            <div class="content_page">
+                <div class="page_timeline">
+                    <div class="timeline_online">
+                        <div class="online_icon">
+                            <i class="fa-solid fa-house-signal"></i>
+                        </div>
+                        <div class="online_number">
+                            Online <span>1,357</span>
+                        </div>
+                    </div>
+                    <div class="timeline_row" id="timeline">
+
+
+                    </div>
+                </div>
+                <div class="page_profile">
+                    <div class="profile_header">
+                        <span>My Profile</span>
+                    </div>
+                    <div class="profile_infoaccount">
+                        <div class="infoaccount_user">
+                            <div class="user_info">
+                                <div class="user_info_top">
+                                    <div class="user_info_top_avatar">
+                                        {%  if user.avatar == none %}
+                                     <div> <img alt="avatar"  src="https://eu.ui-avatars.com/api/?background=random&amp;color=fff&amp;name={{user.username}}" class="style_image__2RtdN style_opacity__3ZbZM" /></div>
+                                     {%  else %}
+
+                                <div><img alt="avatar" src="{{ user.avatar}}" class="style_image__2RtdN style_opacity__3ZbZM" /></div>
+                                     {%  endif %}
+                                    </div>
+                                    <div class="user_info_top_right">
+                                        <div class="user_info_name">
+                                            <span>{{ user.username }}</span>
+                                        </div>
+                                        <div class="user_info_mail">
+                                            <i class="fa-regular fa-envelope"></i>
+                                            <span>{{ user.email }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="user_info_level">
+                                    <div class="level_text">
+                                        <div class="level_number">
+                                            <div class="number_box">0</div>
+                                            <span>Level</span>
+                                        </div>
+                                        <div class="level_missing">
+                                            <span>500 coins to level up</span>
+                                        </div>
+                                    </div>
+                                    <div class="level_line">
+                                        <div class="level_line_status"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="infoaccount_static">
+                            <div class="infoaccount_header">
+                                <i class="fa-solid fa-signal"></i>
+                                <span>Static</span>
+                            </div>
+                            <div class="infoaccount_box">
+                                <div class="staticbox_item">
+                                    <div class="boxitem_icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </div>
+                                    <div class="boxitem_right">
+                                        <div class="boxitem_right_top">0</div>
+                                        <div class="boxitem_right_under">Completed Offers</div>
+                                    </div>
+                                </div>
+                                <div class="staticbox_item">
+                                    <div class="boxitem_icon">
+                                        <i class="fa-solid fa-sack-dollar"></i>
+                                    </div>
+                                    <div class="boxitem_right">
+                                        <div class="boxitem_right_top">{{ user.user_coins }}</div>
+                                        <div class="boxitem_right_under">Total Earning</div>
+                                    </div>
+                                </div>
+                                <div class="staticbox_item">
+                                    <div class="boxitem_icon">
+                                        <i class="fa-solid fa-people-arrows"></i>
+                                    </div>
+                                    <div class="boxitem_right">
+                                        <div class="boxitem_right_top">0</div>
+                                        <div class="boxitem_right_under">Users Referred</div>
+                                    </div>
+                                </div>
+                                <div class="staticbox_item">
+                                    <div class="boxitem_icon">
+                                        <i class="fa-solid fa-filter-circle-dollar"></i>
+                                    </div>
+                                    <div class="boxitem_right">
+                                        <div class="boxitem_right_top">{{ user.user_coins }}</div>
+                                        <div class="boxitem_right_under">Earnings last 30 days</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="frofile_infomation">
+                        <div class="infomation_item">
+                            <div class="infomation_item_title">
+                                <span>Infomation</span>
+                            </div>
+                            <div class="infomation_item_main">
+                                <div class="infomation_item_column">
+                                    <div class="item_column_name"> 
+                                        <span>Vmoneys ID:</span>
+                                    </div>
+                                    <div class="item_column_value">
+                                        <span>{{ user.user_id }}</span>
+                                    </div>
+                                </div>
+                                <div class="infomation_item_column">
+                                    <div class="item_column_name"> 
+                                        <span>Email:</span>
+                                    </div>
+                                    <div class="item_column_value">
+                                        <span>{{ user.email}}</span>
+                                    </div>
+                                </div>
+                                <div class="infomation_item_column">
+                                    <div class="item_column_name"> 
+                                        <span>Date Joined:</span>
+                                    </div>
+                                    <div class="item_column_value">
+                                        <span>{{ user.date_joined }}</span>
+                                    </div>
+                                </div>
+                                <div class="infomation_item_column">
+                                    <div class="item_column_name"> 
+                                        <span>Total Earning:</span>
+                                    </div>
+                                    <div class="item_column_value">
+                                        <span>{{ user.user_coins }}</span>
+                                    </div>
+                                </div>
+                                <div class="infomation_item_column">
+                                    <div class="item_column_name"> 
+                                        <span>Total Withdrawals:</span>
+                                    </div>
+                                    <div class="item_column_value">
+                                        <span>0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="infomation_item">
+                            <ul class="tabs" role="tablist">
+                                <li>
+                                    <input type="radio" name="tabs" id="tab1" checked />
+                                    <label for="tab1" role="tab" aria-selected="true" aria-controls="panel1" tabindex="0">Earned History</label>
+                                    <div id="tab-content1" class="tab-content" role="tabpanel" aria-labelledby="description" aria-hidden="false">
+                                        <div class="tab_earned_table">
+                                            <div class="tab_earned_table_item">Offer name</div>
+                                            <div class="tab_earned_table_item">Wall</div>
+                                            <div class="tab_earned_table_item">Reward</div>
+                                            <div class="tab_earned_table_item">Date</div>
+                                        </div>
+                                        <div class="tab_earned_history">
+                                            <span>No earnings yet</span>
+                                        </div>
+                                    </div>
+                                </li>
+                              
+                                <li>
+                                    <input type="radio" name="tabs" id="tab2" />
+                                    <label for="tab2" role="tab" aria-selected="false" aria-controls="panel2" tabindex="0">Withdrawals History</label>
+                                    <div id="tab-content2" class="tab-content" role="tabpanel" aria-labelledby="specification" aria-hidden="true">
+                                         <div class="tab_earned_table">
+                                            <div class="tab_earned_table_item">Type</div>
+                                            <div class="tab_earned_table_item">Email/Address</div>
+                                            <div class="tab_earned_table_item">Coins</div>
+                                            <div class="tab_earned_table_item">Status</div>
+                                        </div>
+                                        <div class="tab_earned_history">
+                                            <span>No withdrawals yet</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="content_footer">
+                    <div class="footer_content">
+                        <div class="footer_left">
+                            <div class="left_logo">
+                                <img src={% static "/public/assets/img/footer_logo_vmoneys.png" alt="" %}>
+                            </div>
+                            <div class="footer_left_text">
+                                <div class="left_title">Vmoneys.net | All Rights Reserved</div>
+                                <div class="left_description">© Copyright 2020 - 2023</div>
+                            </div>
+
+                        </div>
+                        <div class="footer_main">
+                            <div class="footer_main_column">
+                                <div class="main_column_title">About</div>
+                                <div class="main_column_description">
+                                    <a href="/terms">Terms of Service</a>
+                                </div>
+                                <div class="main_column_description">
+                                    <a href="/privacy">Privacy Policy</a>
+                                </div>
+                            </div>
+                            <div class="footer_main_column">
+                                <div class="main_column_title">Support</div>
+                                <div class="main_column_description">
+                                    <a href="mailto:contact@vmoneys.net">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_menubottom">
+                <a href="/">
+                    <div class="menubottom_item activebtn">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Home</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/earn">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Earn</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/withdraw">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-brands fa-cc-amazon-pay"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Withdraw</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/leaderboard">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-solid fa-ranking-star"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Leaderboard</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/ref">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Referrals</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src={% static "/public/assets/js/app.js" %}></script>
+<script>
+            setTimeout(() => {
+                gettimeline();
+            }, 50);
+
+        </script>
+</body>
+</html>

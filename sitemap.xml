@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://lootcash.net/</loc>
+  <lastmod>2023-01-05T03:46:27+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://lootcash.net/earn/</loc>
+  <lastmod>2023-01-05T03:46:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lootcash.net/rewards/</loc>
+  <lastmod>2023-01-05T03:46:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lootcash.net/leaderboard/</loc>
+  <lastmod>2023-01-05T03:46:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lootcash.net/ref/</loc>
+  <lastmod>2023-01-05T03:46:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lootcash.net/signin/</loc>
+  <lastmod>2023-01-05T03:46:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lootcash.net/signup/</loc>
+  <lastmod>2023-01-05T03:46:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lootcash.net/contact/</loc>
+  <lastmod>2023-01-05T03:46:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lootcash.net/faq/</loc>
+  <lastmod>2023-01-05T03:46:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lootcash.net/missingcoins/</loc>
+  <lastmod>2023-01-05T03:46:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lootcash.net/terms/</loc>
+  <lastmod>2023-01-05T03:46:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lootcash.net/privacy/</loc>
+  <lastmod>2023-01-05T03:46:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>

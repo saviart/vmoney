@@ -1,0 +1,983 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vmoneys</title>
+    <link rel="shortcut icon" href={% static "/public/assets/img/favicon.png" %}/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href={% static "public/assets/css/style.css" %} />
+    <link rel="stylesheet" href={% static "public/assets/font/fontawesome-free-6.2.1-web/css/all.min.css" %} />
+
+</head>
+<body>
+    <div class="page_signup">
+        <div class="page_signup_main">
+            <div class="signup_main_baner">
+                <span>Create your account.</span>
+            </div>
+            <div class="signup_main_title">
+                <span>Enter the fields below to get started!</span>
+            </div>
+            <div class="signup_main_input">
+                <input type="text" placeholder="Username" autocomplete="off" >
+                <input type="text" placeholder="Email" autocomplete="off" >
+                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Repassword">
+            </div>
+            <div class="signup_main_signup">
+                <button>Sign Up</button>
+            </div>
+            <div class="signup_main_signupnwith">
+                --------- or ---------
+            </div>
+            <div class="signup_main_google">
+                <button><img src={% static "/public/assets/img/google.jpg" %} alt=""><span>SignUp with Google</span></button>
+            </div>
+            <div class="signup_main_haveacc">
+                <span>Already have an account?</span>
+                <a href="/signin">Sign In</a>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="modal_account" onclick="hideModalprofile()">
+            <div class="modal_account_main">
+                <a href="/profile">
+                    <div class="modal_account_item">
+                        <i class="fa-solid fa-id-card"></i>
+                        <span>Profile</span>
+                    </div>
+                </a>
+                <a href="/">
+                    <div class="modal_account_item">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span> Logout<span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="side_menu">
+            <div class="menu_logo">
+                <img src={% static "/public/assets/img/main_logo_vmoneys.png" alt="" %}/>
+            </div>
+            <div class="menu_list">
+                <a href="">
+                    <div class="list_item active">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </div>
+                </a>
+                <a href="/earn">
+                    <div class="list_item">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        <span>Earn</span>
+                    </div>
+                </a>
+                <a href="/withdraw">
+                    <div class="list_item">
+                        <i class="fa-brands fa-cc-amazon-pay"></i>
+                        <span>Withdraw</span>
+                    </div>
+                </a>
+                <a href="/leaderboard">
+                    <div class="list_item">
+                        <i class="fa-solid fa-ranking-star"></i>
+                        <span>Leaderboard</span>
+                    </div>
+                </a>
+                <a href="/ref">
+                    <div class="list_item">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <span>Referrals</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="main_content">
+            <div class="content_header">
+                <div class="header_logo">
+                    <img src={% static "/public/assets/img/main_logo_vmoneys.png" alt="" %} >
+                </div>
+                <div class="header_account">
+                    <div class="account_info">
+                        <div class="account_info_name"> <span>tuannh391</span></div>
+                        <div class="account_info_point">
+                            <i class="fa-solid fa-coins"></i>
+                            <span>1,000</span>
+
+                        </div>
+                    </div>
+                    <div class="account_avatar" onclick="showModalprofile()">
+                        <img src={% static "/public/assets/img/avatar" alt="" %}>
+                    </div>
+                </div>
+                <div class="header_btn">
+                    <a href="/signin">
+                        <div class="btn_signin">
+                            <div class="signin_icon">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                            </div>
+                            <div class="signin_text">
+                                SIGN IN
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/signup">
+                        <div class="btn_signup">
+                            <div class="signup_icon">
+                                <i class="fa-solid fa-user-pen"></i>
+                            </div>
+                            <div class="signup_text">
+                                SIGN UP
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="content_page">
+                <div class="page_timeline">
+                    <div class="timeline_online">
+                        <div class="online_icon">
+                            <i class="fa-solid fa-house-signal"></i>
+                        </div>
+                        <div class="online_number">
+                            Online <span>1,357</span>
+                        </div>
+                    </div>
+                    <div class="timeline_row">
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_item">
+                            <div class="item_avatar">
+                                <img src={% static "/public/assets/img/avatar" alt="" %}>
+                            </div>
+                            <div class="item_info">
+                                <div class="info_lead">
+                                    <div class="lead_network">Lootably</div>
+                                    <div class="lead_time">12:23</div>
+                                </div>
+                                <div class="info_offer">
+                                    <div class="offer_text">
+                                        <div class="text_nameoff">Action Network Sports Betting</div>
+                                        <div class="text_user">tuannh391</div>
+                                    </div>
+                                    <div class="offer_poin">286</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_heading">
+                    <div class="heading_wellcome">
+                        <div class="wellcome_title">
+                            <div>Do you want to earn cash from the comfort of your own home?</div>
+                        </div>
+                        <div class="wellcome_description">
+                            <div>Want to earn cash by sharing your opinions or completing offers? Discover the many opportunities available through online surveys and offers.</div>
+                        </div>
+                        <div class="wellcome_option">
+                            <div>By sharing your feedback and engaging with advertisers, you can earn rewards and cash from the comfort of your own home. Start exploring the many survey and offer opportunities available today!</div>
+                        </div>
+                        <a class="wellcome_btn" href="/signin">
+                            <div class="wellcome_btn_startnow">
+                                start now
+                            </div>
+                        </a>
+                    </div>
+                    <div class="heading_animation">
+                        <img src={% static "/public/assets/img/main_logo_vmoneys.png" alt="" %}>
+                    </div>
+                </div>
+                <div class="page_static">
+                    <div class="static_left">
+                        <div class="left_title">
+                            Well come to Vmoneys !
+                        </div>
+                        <div class="left_description">
+                            Earn up to <span class="description_text">$5.86</span> per offer
+                        </div>
+                        <div class="left_countoffer">
+                            - 296 Offers available
+                        </div>
+                        <div class="left_countoffer">
+                            - 168 Survey available
+                        </div>
+                        <div class="left_highest_title">
+                            Last week highest user earnings
+                        </div>
+                        <div class="left_highest_score">
+                            <div class="score_box">
+                                $128.86
+                            </div>
+                        </div>
+                    </div>
+                    <div class="static_right">
+                        <div class="right_top">
+                            <div class="right_item">
+                                <div class="right_item_icon">
+                                    <i class="fa fa-users" aria-hidden="true"></i>
+                                </div>
+                                <div class="right_item_number">
+                                    <span>468,250</span>
+                                </div>
+                                <div class="right_item_text">
+                                    <span>Registered Users</span>
+                                </div>
+
+                            </div>
+                            <div class="right_item">
+                                <div class="right_item_icon">
+                                    <i class="fa-regular fa-money-bill-1"></i>
+                                </div>
+                                <div class="right_item_number">
+                                    <span>768,288.68</span>
+                                </div>
+                                <div class="right_item_text">
+                                    <span>USD Earned</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="right_under">
+                            <div class="right_item">
+                                <div class="right_item_icon">
+                                    <i class="fa-solid fa-list-check"></i>
+                                </div>
+                                <div class="right_item_number">
+                                    <span>886,680</span>
+                                </div>
+                                <div class="right_item_text">
+                                    <span>Completed Offers</span>
+                                </div>
+
+                            </div>
+                            <div class="right_item">
+                                <div class="right_item_icon">
+                                    <i class="fa-solid fa-money-bill-transfer"></i>
+                                </div>
+                                <div class="right_item_number">
+                                    <span>468,250</span>
+                                </div>
+                                <div class="right_item_text">
+                                    <span>Completed Payouts</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="page_howto">
+                    <div class="howto_title">How to get started?</div>
+                    <div class="howto_description">Earning money on Vmoney has been simplified to the maximum extent possible with 3 simple steps !!!</div>
+                    <div class="howto_section">
+                        <div class="section_group1">
+                            <div class="section_1">
+                                <div class="section_1_text">STEP 1:</div>
+                            </div>
+                            <div class="section_step1">
+                                <div class="step1_img">
+                                    <img src={% static "/public/assets/img/step1.png" alt="" %}>
+                                </div>
+                                <div class="step1_text">
+                                    <div class="step1_title">Step 1: Let's Register account on Vmoneys</div>
+                                    <div class="step1_description">Creating an Vmoneys account is quick and easy, taking less than a minute, and you'll be up and running in no time. You can even sign in with Google. Start earning money today!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section_group2">
+                            <div class="section_2">
+                                <div class="section_2_text">STEP 2:</div>
+                            </div>
+                            <div class="section_step2">
+                                <div class="step2_text">
+                                    <div class="step2_title">Step 2: Select & Complete Tasks</div>
+                                    <div class="step2_description">Choose offers from the Surveys page on Vmoneys and complete tasks like surveys, free trials, app downloads, or video watching to earn money. Each task has a specific payout, so select ones that interest you and fit your schedule.</div>
+                                </div>                                <div class="step2_img">
+                                    <img src={% static "/public/assets/img/step2.png" alt="" %}>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section_group1">
+                            <div class="section_1">
+                                <div class="section_1_text">STEP 3:</div>
+                            </div>
+                            <div class="section_step1">
+                                <div class="step1_img">
+                                    <img src={% static "/public/assets/img/step3.png" alt="" %}>
+                                </div>
+                                <div class="step1_text">
+                                    <div class="step1_title">Step 3: Withdraw your coins</div>
+                                    <div class="step1_description">When you've accumulated some coins on Vmoneys, you can withdraw them from your account. We provide various payment options, including PayPal, gift cards, and cryptocurrencies, among others. </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="page_partner">
+                    <div class="partner_title">Our partners</div>
+                    <div class="partner_description">
+                        We take great care to pick the best, most reputable offer wall, Surveys companies.
+                    </div>
+                    <div class="partner_section">
+                        <div class="partner_section_type">
+                            <div class="partner_section_type_name">
+                                <i class="fa-solid fa-list"></i>
+                                Offer Wall
+                            </div>
+                        </div>
+                        <div class="partner_section_list">
+                            <div class="partner_section_list_item partner_section_list_item-1">
+                                <div class="partner_section_list_item_plus ">
+                                    <div class="partner_section_list_item_recomemend hidden"> Recommended</div>
+                                </div>
+                                <div class="partner_section_list_item_logo">
+                                    <img src={% static "/public/assets/img/adgate.webp" alt="" %}>
+                                </div>
+                                <div class="partner_section_list_item_name">AdgateMedia</div>
+                                <div class="partner_section_list_item_bottom">
+                                    <div class="bottom_line bottom_line-1"></div>
+                                </div>
+                            </div>
+                            <div class="partner_section_list_item partner_section_list_item-2">
+                                <div class="partner_section_list_item_plus ">
+                                    <div class="partner_section_list_item_recomemend hidden"> Recommended</div>
+                                </div>
+                                <div class="partner_section_list_item_logo">
+                                    <img src={% static "/public/assets/img/adgem.webp" alt="" %}>
+                                </div>
+                                <div class="partner_section_list_item_name">Adgem</div>
+                                <div class="partner_section_list_item_bottom">
+                                    <div class="bottom_line bottom_line-2"></div>
+                                </div>
+                            </div>
+                            <div class="partner_section_list_item partner_section_list_item-3">
+                                <div class="partner_section_list_item_plus ">
+                                    <div class="partner_section_list_item_recomemend hidden"> Recommended</div>
+                                </div>
+                                <div class="partner_section_list_item_logo">
+                                    <img src={% static "/public/assets/img/lootably.webp" alt="" %}>
+                                </div>
+                                <div class="partner_section_list_item_name">Lootably</div>
+                                <div class="partner_section_list_item_bottom">
+                                    <div class="bottom_line bottom_line-3"></div>
+                                </div>
+                            </div>
+                            <div class="partner_section_list_item partner_section_list_item-4">
+                                <div class="partner_section_list_item_plus ">
+                                    <div class="partner_section_list_item_recomemend hidden"> Recommended</div>
+                                </div>
+                                <div class="partner_section_list_item_logo">
+                                    <img src={% static "/public/assets/img/offertoro.webp" alt="" %}>
+                                </div>
+                                <div class="partner_section_list_item_name">OfferToro</div>
+                                <div class="partner_section_list_item_bottom">
+                                    <div class="bottom_line bottom_line-4"></div>
+                                </div>
+                            </div>
+                            <div class="partner_section_list_item partner_section_list_item-5">
+                                <div class="partner_section_list_item_plus ">
+                                    <div class="partner_section_list_item_recomemend hidden"> Recommended</div>
+                                </div>
+                                <div class="partner_section_list_item_logo">
+                                    <img src={% static "/public/assets/img/notik.png" alt="" %}>
+                                </div>
+                                <div class="partner_section_list_item_name">Notik</div>
+                                <div class="partner_section_list_item_bottom">
+                                    <div class="bottom_line bottom_line-5"></div>
+                                </div>
+                            </div>
+                            <div class="partner_section_list_item partner_section_list_item-1">
+                                <div class="partner_section_list_item_plus ">
+                                    <div class="partner_section_list_item_recomemend hidden"> Recommended</div>
+                                </div>
+                                <div class="partner_section_list_item_logo">
+                                    <img src={% static "/public/assets/img/cpalead.webp" alt="" %}>
+                                </div>
+                                <div class="partner_section_list_item_name">CPAlead</div>
+                                <div class="partner_section_list_item_bottom">
+                                    <div class="bottom_line bottom_line-1"></div>
+                                </div>
+                            </div>
+                            <div class="partner_section_list_item partner_section_list_item-4">
+                                <div class="partner_section_list_item_plus ">
+                                    <div class="partner_section_list_item_recomemend hidden"> Recommended</div>
+                                </div>
+                                <div class="partner_section_list_item_logo">
+                                    <img src={% static "/public/assets/img/ayetstudios.webp" alt="" %}>
+                                </div>
+                                <div class="partner_section_list_item_name">Ayetstudios</div>
+                                <div class="partner_section_list_item_bottom">
+                                    <div class="bottom_line bottom_line-4"></div>
+                                </div>
+                            </div>
+                            <div class="partner_section_list_item partner_section_list_item-5">
+                                <div class="partner_section_list_item_plus ">
+                                    <div class="partner_section_list_item_recomemend hidden"> Recommended</div>
+                                </div>
+                                <div class="partner_section_list_item_logo">
+                                    <img src={% static "/public/assets/img/monlix.svg" alt="" %}>
+                                </div>
+                                <div class="partner_section_list_item_name">Monlix</div>
+                                <div class="partner_section_list_item_bottom">
+                                    <div class="bottom_line bottom_line-5"></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="partner_section_type">
+                            <div class="partner_section_type_name">
+                                <i class="fa-solid fa-list"></i>
+                                Offer Wall
+                            </div>
+                        </div>
+                        <div class="partner_section_list">
+                            <div class="partner_section_list_item partner_section_list_item-1">
+                                <div class="partner_section_list_item_plus ">
+                                    <div class="partner_section_list_item_recomemend hidden"> Recommended</div>
+                                </div>
+                                <div class="partner_section_list_item_logo">
+                                    <img src={% static "/public/assets/img/bitlabs.webp" alt="" %}>
+                                </div>
+                                <div class="partner_section_list_item_name">Bitlabs</div>
+                                <div class="partner_section_list_item_bottom">
+                                    <div class="bottom_line bottom_line-1"></div>
+                                </div>
+                            </div>
+                            <div class="partner_section_list_item partner_section_list_item-2">
+                                <div class="partner_section_list_item_plus ">
+                                    <div class="partner_section_list_item_recomemend hidden"> Recommended</div>
+                                </div>
+                                <div class="partner_section_list_item_logo">
+                                    <img src={% static "/public/assets/img/inbrain.webp" alt="" %}>
+                                </div>
+                                <div class="partner_section_list_item_name">Inbrain</div>
+                                <div class="partner_section_list_item_bottom">
+                                    <div class="bottom_line bottom_line-2"></div>
+                                </div>
+                            </div>
+                            <div class="partner_section_list_item partner_section_list_item-3">
+                                <div class="partner_section_list_item_plus ">
+                                    <div class="partner_section_list_item_recomemend hidden"> Recommended</div>
+                                </div>
+                                <div class="partner_section_list_item_logo">
+                                    <img src={% static "/public/assets/img/cpx.webp" alt="" %}>
+                                </div>
+                                <div class="partner_section_list_item_name">CPX Research</div>
+                                <div class="partner_section_list_item_bottom">
+                                    <div class="bottom_line bottom_line-3"></div>
+                                </div>
+                            </div>
+                            <div class="partner_section_list_item partner_section_list_item-5">
+                                <div class="partner_section_list_item_plus ">
+                                    <div class="partner_section_list_item_recomemend hidden"> Recommended</div>
+                                </div>
+                                <div class="partner_section_list_item_logo">
+                                    <img src={% static "/public/assets/img/opinion-logo.svg" alt="" %}>
+                                </div>
+                                <div class="partner_section_list_item_name">Opinioncapital</div>
+                                <div class="partner_section_list_item_bottom">
+                                    <div class="bottom_line bottom_line-5"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="page_faq">
+                    <div class="fqa_title">FQA</div>
+                    <div class="fqa_main">
+                        <div class="faq_column1">
+                            <div class="column1_item">
+                                <div class="column1_title" onclick="showfqa()">
+                                    <div class="title_text">
+                                        How it works? (Is it actually possible to earn an income on the internet?)
+                                    </div>
+                                    <div class="title_icon">
+                                        <i id="fqa_icon" class="fa-solid fa-sort-down"></i>
+                                    </div>
+                                </div>
+                                <div class="column1_description hidden">
+                                    <div class="description_text">
+                                        Have you heard of Vmoneys? It's an online platform that allows you to earn cryptocurrency by participating in online surveys and completing offers. Many companies around the world rely on consumer feedback to improve their products and marketing strategies, and Vmoneys connects you with these companies to share your opinions and earn rewards for your time. By taking surveys, testing games and apps, watching videos, or completing sign-ups and shopping offers, you can earn free crypto without leaving the comfort of your own home. So why not join Vmoneys today and start earning while providing valuable feedback?
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column1_item">
+                                <div class="column1_title1 column1_title" onclick="showfqa12()">
+                                    <div class="title_text">
+                                        How much money can you really earn on Vmoneys?
+                                    </div>
+                                    <div class="title_icon">
+                                        <i id="fqa_icon 12" class="fa-solid fa-sort-down"></i>
+                                    </div>
+                                </div>
+                                <div class="column1_description1 column1_description hidden">
+                                    <div class="description_text">
+                                        The truth is, the amount you can earn is entirely up to you. The more time you spend on the site and the more tasks you complete, the more you can earn. Your earnings also depend on your location, as some tasks may not be available in certain regions. However, many of our users are able to earn a significant amount of money each month, with our top earners making hundreds of dollars. So if you're looking for a flexible way to earn extra income, Vmoneys is definitely worth checking out.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column1_item">
+                                <div class="column1_title2 column1_title" onclick="showfqa13()">
+                                    <div class="title_text">
+                                        How long does it take to cash out your money?
+                                    </div>
+                                    <div class="title_icon">
+                                        <i id="fqa_icon 13" class="fa-solid fa-sort-down"></i>
+                                    </div>
+                                </div>
+                                <div class="column1_description2 column1_description hidden">
+                                    <div class="description_text">
+                                        We're proud to offer a fast and convenient withdrawal process, with our dedicated support team available to assist you. If you request a withdrawal, our team will work to approve it as quickly as possible, often within just a few minutes. And if you have any questions or concerns about the withdrawal process, our live support team is always available to help. So if you're looking for a reliable platform to earn money online and cash out your earnings quickly and easily, Vmoneys is a great choice.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq_column2">
+                            <div class="column2_item">
+                                <div class="column2_title" onclick="showfqa2()">
+                                    <div class="title_text">
+                                        Can I use Vmoneys on my Android or iOS device?
+                                    </div>
+                                    <div class="title_icon">
+                                        <i id="fqa_icon 2" class="fa-solid fa-sort-down"></i>
+                                    </div>
+                                </div>
+                                <div class="column2_description hidden">
+                                    <div class="description_text">
+                                        You can use Vmoneys from any device. Our website is fully responsive and will work great on your desktop, laptop, tablet, or mobile phone!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column2_item">
+                                <div class="column2_title2 column2_title" onclick="showfqa22()">
+                                    <div class="title_text">
+                                        Can I fake my location or use VPN?
+                                    </div>
+                                    <div class="title_icon">
+                                        <i id="fqa_icon 22" class="fa-solid fa-sort-down"></i>
+                                    </div>
+                                </div>
+                                <div class="column2_description2 column2_description hidden">
+                                    <div class="description_text">
+                                        It's important to note that using VPNs or attempting to fake your location is strictly prohibited on our platform. We take this rule very seriously, and any users found violating this policy will have their account permanently suspended. We want to ensure a fair and honest environment for all of our users, and allowing location manipulation would compromise the integrity of our system. Additionally, we only allow one account per user, so attempting to use multiple accounts or manipulate your location to complete tasks is not allowed. We appreciate your cooperation in helping us maintain a trustworthy and reliable platform for all of our users.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column2_item">
+                                <div class="column2_title3 column2_title" onclick="showfqa23()">
+                                    <div class="title_text">
+                                        How referral program works?
+                                    </div>
+                                    <div class="title_icon">
+                                        <i id="fqa_icon 23" class="fa-solid fa-sort-down"></i>
+                                    </div>
+                                </div>
+                                <div class="column2_description3 column2_description hidden">
+                                    <div class="description_text">
+                                        Did you know that you can earn even more on Vmoneys by inviting your friends and other users to join the platform? By sharing your invitation link, you can earn 10% of the coins earned by your referrals every time they complete an Offer wall task or online survey. Many of our users have already established a passive income stream simply by having a large network of referrals. So if you're looking to earn more on Vmoneys and want to share the benefits of the platform with others, be sure to take advantage of our referral program. It's a win-win situation for everyone!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="page_whyus">
+                    <div class="whyus_title"> Why Us</div>
+                    <div class="whyus_section">
+                        <div class="section_column">
+                            <div class="column_item">
+                                <div class="column_item_icon">
+                                    <i class="fa-regular fa-square-check"></i>
+                                </div>
+                                <div class="column_item_text">
+                                    <div class="column_item_text_title">
+                                        HIGHEST PAYOUTS
+                                    </div>
+                                    <div class="column_item_text_description">
+                                        Best payout ratio
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column_item">
+                                <div class="column_item_icon">
+                                    <i class="fa-regular fa-square-check"></i>
+                                </div>
+                                <div class="column_item_text">
+                                    <div class="column_item_text_title">
+                                        24/7 SUPPORT
+                                    </div>
+                                    <div class="column_item_text_description">
+                                        We are here for you 24/7
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column_item">
+                                <div class="column_item_icon">
+                                    <i class="fa-regular fa-square-check"></i>
+                                </div>
+                                <div class="column_item_text">
+                                    <div class="column_item_text_title">
+                                        10% REFERRALS
+                                    </div>
+                                    <div class="column_item_text_description">
+                                        Refer and earn! Establish a passive income
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column_item">
+                                <div class="column_item_icon">
+                                    <i class="fa-regular fa-square-check"></i>
+                                </div>
+                                <div class="column_item_text">
+                                    <div class="column_item_text_title">
+                                        INSTANT WITHDRAWALS
+                                    </div>
+                                    <div class="column_item_text_description">
+                                        Cashouts starting at $2.00
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section_column">
+                            <div class="column_item">
+                                <div class="column_item_icon">
+                                    <i class="fa-regular fa-square-check"></i>
+                                </div>
+                                <div class="column_item_text">
+                                    <div class="column_item_text_title">
+                                        UNLIMITED OFFERS
+                                    </div>
+                                    <div class="column_item_text_description">
+                                        We support most of the offer-wall and survey providers
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column_item">
+                                <div class="column_item_icon">
+                                    <i class="fa-regular fa-square-check"></i>
+                                </div>
+                                <div class="column_item_text">
+                                    <div class="column_item_text_title">
+                                        CRYPTO PAYMENTS
+                                    </div>
+                                    <div class="column_item_text_description">
+                                        Receive payments in Litecoin and more
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column_item">
+                                <div class="column_item_icon">
+                                    <i class="fa-regular fa-square-check"></i>
+                                </div>
+                                <div class="column_item_text">
+                                    <div class="column_item_text_title">
+                                        RESPONSIVE DESIGN
+                                    </div>
+                                    <div class="column_item_text_description">
+                                        Adjusts smoothly to various screen sizes, mobile phones and tablets
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column_item">
+                                <div class="column_item_icon">
+                                    <i class="fa-regular fa-square-check"></i>
+                                </div>
+                                <div class="column_item_text">
+                                    <div class="column_item_text_title">
+                                        USER FRIENDLY
+                                    </div>
+                                    <div class="column_item_text_description">
+                                        We focus on simplicity so you can focus on earning
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_withdraw">
+                    <div class="withdraw_title">Withdraw Selection</div>
+                    <div class="withdraw_description">Litecoin and Paypal are our biggest and most popular withdrawal methods, essentially transferring legal tender into your wallet. Spending on your guilty pleasures has never been easier. CryptoCurrencies are now a form of Rewards! Pick from our wide range of Crypto and receive with 0 fees.</div>
+                    <div class="withdraw_main">
+                        <div class="withdraw_main_type">Withdraw Cash</div>
+                        <div class="withdraw_main_frame">
+                            <div class="frame_item frame_item-paypal">
+                                <img src={% static "/public/assets/img/paypalShopLogo.svg" alt="" %}>
+                            </div>
+                            <div class="frame_item frame_item-apple">
+                                <img src={% static "/public/assets/img/appleShopLogo.svg" alt="" %}>
+                            </div>
+                            <div class="frame_item frame_item-google">
+                                <img src={% static "/public/assets/img/googleplayShopLogo.svg" alt="" %}>
+                            </div>
+                            <div class="frame_item frame_item-amazone">
+                                <img src={% static "/public/assets/img/amazonShopLogo.svg" alt="" %}>
+                            </div>
+                            <div class="frame_item frame_item-netflix">
+                                <img src={% static "/public/assets/img/netflixShopLogo.svg" alt="" %}>
+                            </div>
+                            <div class="frame_item frame_item-steam">
+                                <img src={% static "/public/assets/img/steamShopLogo.svg" alt="" %}>
+                            </div>
+                        </div>
+
+                        <div class="withdraw_main_type">Cryptocurrencies</div>
+                        <div class="withdraw_main_frame">
+                            <div class="frame_item frame_item-bitcoin">
+                                <img src={% static "/public/assets/img/bitcoinShopLogo.svg" alt="" %}>
+                            </div>
+                            <div class="frame_item frame_item-dogecoin">
+                                <img src={% static "/public/assets/img/dogecoinShopLogo.svg" alt="" %}>
+                            </div>
+                            <div class="frame_item frame_item-litecoin">
+                                <img src={% static "/public/assets/img/litecoinShopLogo.svg" alt="" %}>
+                            </div>
+                            <div class="frame_item frame_item-eth">
+                                <img src={% static "/public/assets/img/ethereumShopLogo.svg" alt="" %}>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content_footer">
+                    <div class="footer_content">
+                        <div class="footer_left">
+                            <div class="left_logo">
+                                <img src={% static "/public/assets/img/footer_logo_vmoneys.png" alt="" %}>
+                            </div>
+                            <div class="footer_left_text">
+                                <div class="left_title">Vmoneys.net | All Rights Reserved</div>
+                                <div class="left_description">© Copyright 2020 - 2023</div>
+                            </div>
+
+                        </div>
+                        <div class="footer_main">
+                            <div class="footer_main_column">
+                                <div class="main_column_title">About</div>
+                                <div class="main_column_description">
+                                    <a href="/terms">Terms of Service</a>
+                                </div>
+                                <div class="main_column_description">
+                                    <a href="/privacy">Privacy Policy</a>
+                                </div>
+                            </div>
+                            <div class="footer_main_column">
+                                <div class="main_column_title">Support</div>
+                                <div class="main_column_description">
+                                    <a href="mailto:contact@vmoneys.net">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_menubottom">
+                <a href="">
+                    <div class="menubottom_item activebtn">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Home</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/earn">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Earn</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/withdraw">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-brands fa-cc-amazon-pay"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Withdraw</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/leaderboard">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa-solid fa-ranking-star"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Leaderboard</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/ref">
+                    <div class="menubottom_item">
+                        <div class="menubottom_item_icon">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                        </div>
+                        <div class="menubottom_item_text">
+                            <span>Referrals</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src={% static "/public/assets/js/app.js" %}></script>
+</body>
+</html>
